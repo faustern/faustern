@@ -1,3 +1,2 @@
 - 👋 Hi, I’m @faustern
 - 📫 How to reach me: nguyenhienlong16@gmail.com
-- ⚡ Fun fact: There's a political party in Switzerland that wants to ban the use of PowerPoint.
