@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in or sign up</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+    body {
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.7;
+        color: white;
+        background-image: url(/img/i1.jpg);
+        background-size: 1500px;
+        overflow-x: hidden;
+    }
+    
+    a {
+        cursor: pointer;
+        transition: all 200ms linear;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    .link {
+        color: #c4c3ca;
+    }
+    
+    .link:hover {
+        color: #ffeba7;
+    }
+    
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+    
+    h4 {
+        margin-top: 25px;
+        font-weight: 600;
+    }
+    
+    h6 span {
+        padding: 0 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    
+    .section {
+        position: relative;
+        width: 100%;
+        display: block;
+    }
+    
+    .full-height {
+        min-height: 100vh;
+    }
+    
+    [type="checkbox"]:checked,
+    [type="checkbox"]:not(:checked) {
+        position: absolute;
+        left: -9999px;
+    }
+    
+    .checkbox:checked+label,
+    .checkbox:not(:checked)+label {
+        position: relative;
+        display: block;
+        text-align: center;
+        width: 60px;
+        height: 16px;
+        border-radius: 8px;
+        padding: 0;
+        margin: 10px auto;
+        cursor: pointer;
+        background-color: white;
+    }
+    
+    .checkbox:checked+label:before,
+    .checkbox:not(:checked)+label:before {
+        position: absolute;
+        display: block;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        color: white;
+        background-color: rgb(153, 0, 0);
+        font-family: 'unicons';
+        content: '\eb4f';
+        z-index: 20;
+        top: -10px;
+        left: -10px;
+        line-height: 36px;
+        text-align: center;
+        font-size: 24px;
+        transition: all 0.5s ease;
+    }
+    
+    .checkbox:checked+label:before {
+        transform: translateX(44px) rotate(-270deg);
+    }
+    
+    .card-3d-wrap {
+        position: relative;
+        width: 440px;
+        max-width: 100%;
+        height: 400px;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        perspective: 800px;
+        margin-top: 60px;
+    }
+    
+    .card-3d-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        transition: all 600ms ease-out;
+    }
+    
+    .card-front,
+    .card-back {
+        width: 100%;
+        height: 100%;
+        background-color: #2a2b38;
+        background-image: url(/img/wood.jpg);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: 110%;
+        position: absolute;
+        border-radius: 6px;
+        left: 0;
+        top: 0;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .card-back {
+        transform: rotateY(180deg);
+    }
+    
+    .checkbox:checked~.card-3d-wrap .card-3d-wrapper {
+        transform: rotateY(180deg);
+    }
+    
+    .center-wrap {
+        position: absolute;
+        width: 100%;
+        padding: 0 35px;
+        top: 50%;
+        left: 0;
+        transform: translate3d(0, -50%, 35px) perspective(100px);
+        z-index: 20;
+        display: block;
+    }
+    
+    .form-group {
+        position: relative;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .form-style {
+        padding: 13px 20px;
+        padding-left: 55px;
+        height: 48px;
+        width: 100%;
+        font-weight: 500;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 0.5px;
+        outline: none;
+        color: #c4c3ca;
+        background-color: #1f2029;
+        border: none;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+        box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
+    }
+    
+    .form-style:focus,
+    .form-style:active {
+        border: none;
+        outline: none;
+        box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
+    }
+    
+    .input-icon {
+        position: absolute;
+        top: 0;
+        left: 18px;
+        height: 48px;
+        font-size: 24px;
+        line-height: 48px;
+        text-align: left;
+        color: white;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .form-group input:-ms-input-placeholder {
+        color: #c4c3ca;
+        opacity: 0.7;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .form-group input::-moz-placeholder {
+        color: #c4c3ca;
+        opacity: 0.7;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .form-group input:-moz-placeholder {
+        color: #c4c3ca;
+        opacity: 0.7;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .form-group input::-webkit-input-placeholder {
+        color: #c4c3ca;
+        opacity: 0.7;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .form-group input:focus:-ms-input-placeholder {
+        opacity: 0;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .form-group input:focus::-moz-placeholder {
+        opacity: 0;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .form-group input:focus:-moz-placeholder {
+        opacity: 0;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .form-group input:focus::-webkit-input-placeholder {
+        opacity: 0;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+    }
+    
+    .btn {
+        border-radius: 4px;
+        height: 44px;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+        padding: 0 30px;
+        letter-spacing: 1px;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        justify-content: center;
+        -ms-flex-pack: center;
+        text-align: center;
+        border: none;
+        background-color: rgb(153, 0, 0);
+        border: 2px solid rgb(73, 11, 11);
+        color: white;
+    }
+    
+    .btn:active,
+    .btn:focus {
+        background-color: rgb(0, 153, 51);
+        border: 2px solid rgb(19, 92, 31);
+    }
+    
+    .btn:hover {
+        background-color: rgb(0, 153, 51);
+        border: 2px solid rgb(19, 92, 31);
+        color: white;
+    }
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 30px;
+        padding-top: 50px;
+    }
+    
+    nav {
+        z-index: 10;
+        margin-top: -10px;
+        flex: 1;
+        text-align: center;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 0 100px;
+        box-sizing: border-box;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+    }
+    
+    nav ul {
+        margin-top: 40px;
+        display: inline-block;
+        list-style: none;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        margin-right: 80px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black
+    }
+    
+    nav ul li button {
+        font-size: 20px;
+        color: white;
+        outline: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black
+    }
+    
+    nav ul li button:hover {
+        color: red;
+    }
+    
+    nav ul li a:hover {
+        color: red;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+    }
+    
+    footer {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 50px 100px;
+        background: rgba(7, 17, 27, 37);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    footer .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+    }
+    /*Thiết Lập Cho Thành Phần Nội Dung Giới Thiệu*/
+    
+    footer .container .noi-dung {
+        margin-right: 30px;
+    }
+    
+    footer .container .noi-dung.about {
+        width: 40%;
+    }
+    
+    footer .container .noi-dung.about h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    footer .container .noi-dung.about h2:before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 220px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    footer .container .noi-dung.about p {
+        color: #999;
+    }
+    /*Thiết Lập Cho Thành Phần Icon Mạng Xã Hội*/
+    
+    .social-icon {
+        margin-top: 20px;
+        display: flex;
+    }
+    
+    .social-icon li {
+        list-style: none;
+    }
+    
+    .social-icon li a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    
+    .social-icon li a:hover {
+        background: #f00;
+    }
+    
+    .social-icon li a .fa {
+        color: #fff;
+        font-size: 20px;
+    }
+    
+    .links h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .links h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .links h2::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 232px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    .links {
+        position: relative;
+        width: 25%;
+    }
+    
+    .links ul li {
+        list-style: none;
+    }
+    
+    .links ul li a {
+        color: #999;
+        text-decoration: none;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    
+    .links ul li a:hover {
+        color: #fff;
+    }
+    
+    .contact h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .contact h2::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    .contact {
+        width: calc(35% - 60px);
+        margin-right: 0 !important;
+    }
+    
+    .contact .info {
+        position: relative;
+    }
+    
+    .contact .info li {
+        display: flex;
+        margin-bottom: 16px;
+    }
+    
+    .contact .info li span:nth-child(1) {
+        color: #fff;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    
+    .contact .info li span {
+        color: #999;
+    }
+    
+    .contact .info li a {
+        color: #999;
+        text-decoration: none;
+    }
+    
+    .form__field {
+        width: 90%;
+        background: #fff;
+        color: #a3a3a3;
+        font: inherit;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+        border: 0;
+        outline: 0;
+        padding: 8px 4px;
+    }
+    
+    .form__field {
+        width: 90%;
+        background: #fff;
+        color: #a3a3a3;
+        font: inherit;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+        border: 0;
+        outline: 0;
+        padding: 8px 4px;
+    }
+    
+    @media (max-width: 768px) {
+        footer {
+            padding: 40px;
+        }
+        footer .container {
+            flex-direction: column;
+        }
+        footer .container .noi-dung {
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+        footer .container,
+        .noi-dung.about,
+        .links,
+        .contact {
+            width: 100%;
+        }
+    }
+    
+    .i1 {
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <div class="full-page">
+        <div class="navbar">
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href='countdown.html'>Home</a></li>
+                    <li><a href='letter.html'>Compose</a></li>
+                    <li><a href='signin.html'>Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <div class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Sign Up</h4>
+                                            <form role="form" onsubmit="signUp(event);">
+                                                <div class="form-group">
+                                                    <input type="text" name="logname" class="form-style" placeholder="Full Name" id="logname" autocomplete="off">
+                                                    <i class="input-icon uil uil-user"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="email" name="logemail" class="form-style" placeholder="Email" id="logemail" autocomplete="off">
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="logpass" class="form-style" placeholder="Password" id="logpass" autocomplete="off">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <button type="submit " class="btn mt-4 ">
+                                                    submit
+                                                </button>
+                                            </form>
+                                            <p class="i1">Already a member? <a href="/signin.html">Sign In</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+
+            <div class="noi-dung about">
+                <h2>All About Us</h2>
+                <p>Merry Christmas 2022!</p>
+                <ul class="social-icon">
+                    <li>
+                        <a href="https://www.facebook.com/watch/?v=175310064147000"><i class="fa fa-facebook"><img src="" alt=""></i></a>
+                    </li>
+                    <li><a href="https://www.reddit.com/r/rickroll/comments/zk55mg/_/"><i class="fa fa-reddit"></i></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="noi-dung links">
+                <h2>Link address</h2>
+                <ul>
+                    <li><a href="countdown.html">Home</a></li>
+                    <li><a href="img/RhZhjGhdUFa8jRyi (1).mp4">About Us</a></li>
+                    <li><a href="img/diagnosis bitchless.mp4">Contact</a></li>
+                    <li><a href="https://www.youtube.com/watch?app=desktop&v=ELmWd4O_Jgg">Services</a></li>
+                    <li><a href="signin.html">Account</a></li>
+                </ul>
+            </div>
+
+            <form class="form">
+
+            </form>
+            </li>
+            </ul>
+        </div>
+
+        </div>
+    </footer>
+    <script>
+        const signUp = e => {
+            let logname = document.getElementById('logname').value,
+                logemail = document.getElementById('logemail').value,
+                logpass = document.getElementById('logpass').value;
+
+            let formData = JSON.parse(localStorage.getItem('formData')) || [];
+
+            let exist = formData.length &&
+                JSON.parse(localStorage.getItem('formData')).some(data =>
+                    data.logname.toLowerCase() == logname.toLowerCase()
+                );
+
+            if (!exist) {
+                formData.push({
+                    logname,
+                    logemail,
+                    logpass
+                });
+                localStorage.setItem('formData', JSON.stringify(formData));
+                document.querySelector('form').reset();
+                document.getElementById('logname').focus();
+                location.href = "signin.html";
+            } else {
+                alert("Duplicate found");
+            }
+            e.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

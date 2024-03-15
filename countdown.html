@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+    <title>Main Page</title>
+</head>
+<style type="text/css">
+    @import url('https://fonts.cdnfonts.com/css/lucida-handwriting-std');
+    body {
+        background-image: url("img/bg.png");
+    }
+    
+    div {
+        margin-top: 70px;
+        color: white;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        text-align: center;
+        font-size: 60px;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black
+    }
+    
+    .btn {
+        position: absolute;
+        top: 70%;
+        left: 37%;
+        background-color: rgb(179, 0, 0);
+        color: white;
+        font-size: 16px;
+        padding: 12px 45px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        border: 2px solid rgb(73, 11, 11);
+        background-image: url("img/twitteruser.jpg");
+        background-size: 300px;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black
+    }
+    
+    .btn:hover {
+        border: 2px solid rgb(0, 191, 255);
+        background-image: url("img/reindeer.jpg");
+        background-position: center;
+        background-size: 347px;
+    }
+    
+    .time {
+        border-radius: 5px;
+        padding: 70px 0;
+        top: 50%;
+        margin: auto;
+        border: 2px solid rgb(0, 51, 17);
+        width: 660px;
+        height: 100px;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        text-align: center;
+        font-size: 60px;
+        color: white;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: black;
+        background-image: url("img/countdown.png");
+        background-size: 660px;
+    }
+    
+    .tomska {
+        margin-left: 280px;
+        margin-right: auto;
+        display: block;
+        margin-top: 40px;
+        margin-bottom: -10px;
+    }
+    
+    .heeheheeha {
+        width: 65vh;
+        height: 65vh;
+        display: block;
+        margin-top: -75.7vh;
+        margin-bottom: -18px;
+        margin-left: -100px;
+    }
+    
+    .finger {
+        display: block;
+        margin-top: -71.2vh;
+        margin-bottom: -10px;
+        margin-left: auto;
+        margin-right: -8px;
+    }
+    
+    .full-page {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 30px;
+        padding-top: 50px;
+    }
+    
+    nav {
+        margin-top: -10px;
+        flex: 1;
+        text-align: center;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 0 100px;
+        box-sizing: border-box;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+    }
+    
+    nav ul {
+        margin-top: -140px;
+        display: inline-block;
+        list-style: none;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        margin-right: 80px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black
+    }
+    
+    nav ul li button {
+        font-size: 20px;
+        color: white;
+        outline: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black
+    }
+    
+    nav ul li button:hover {
+        color: red;
+    }
+    
+    nav ul li a:hover {
+        color: red;
+    }
+    /*Thiết Lập Cho Thành Phần Nội Dung Giới Thiệu*/
+    
+    footer .container .noi-dung {
+        margin-right: 30px;
+    }
+    
+    footer .container .noi-dung.about {
+        width: 40%;
+    }
+    
+    footer .container .noi-dung.about h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    footer .container .noi-dung.about h2:before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 220px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    footer .container .noi-dung.about p {
+        color: #999;
+    }
+    /*Thiết Lập Cho Thành Phần Icon Mạng Xã Hội*/
+    
+    .social-icon {
+        margin-top: 20px;
+        display: flex;
+    }
+    
+    .social-icon li {
+        list-style: none;
+    }
+    
+    .social-icon li a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    
+    .social-icon li a:hover {
+        background: #f00;
+    }
+    
+    .social-icon li a .fa {
+        color: #fff;
+        font-size: 20px;
+    }
+    
+    .links h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .links h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .links h2::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 232px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    .links {
+        position: relative;
+        width: 25%;
+    }
+    
+    .links ul li {
+        list-style: none;
+    }
+    
+    .links ul li a {
+        color: #999;
+        text-decoration: none;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    
+    .links ul li a:hover {
+        color: #fff;
+    }
+    
+    .contact h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .contact h2::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    .contact {
+        width: calc(35% - 60px);
+        margin-right: 0 !important;
+    }
+    
+    .contact .info {
+        position: relative;
+    }
+    
+    .contact .info li {
+        display: flex;
+        margin-bottom: 16px;
+    }
+    
+    .contact .info li span:nth-child(1) {
+        color: #fff;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    
+    .contact .info li span {
+        color: #999;
+    }
+    
+    .contact .info li a {
+        color: #999;
+        text-decoration: none;
+    }
+    
+    .form__field {
+        width: 90%;
+        background: #fff;
+        color: #a3a3a3;
+        font: inherit;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+        border: 0;
+        outline: 0;
+        padding: 8px 4px;
+    }
+    
+    .form__field {
+        width: 90%;
+        background: #fff;
+        color: #a3a3a3;
+        font: inherit;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+        border: 0;
+        outline: 0;
+        padding: 8px 4px;
+    }
+    
+    @media (max-width: 768px) {
+        footer {
+            padding: 40px;
+        }
+        footer .container {
+            flex-direction: column;
+        }
+        footer .container .noi-dung {
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+        footer .container,
+        .noi-dung.about,
+        .links,
+        .contact {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="NASA">
+        <style>
+            @import url('http://fonts.cdnfonts.com/css/nasa');
+        </style>
+    </div>
+    <div class="full-page">
+        <div class="navbar">
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href='countdown.html'>Home</a></li>
+                    <li><a href='letter.html'>Compose</a></li>
+                    <li><a href='signin.html'>Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <a href="letter.html">
+        <button class="btn">Write a letter to Santa Claus</button>
+    </a>
+    <div>CHRISTMAS IS COMING!</div>
+    <p class="time" id="time"></p>
+    <div><img src="img/gun.png" alt="" class="tomska"></div>
+    <div><img src="img/heeheheeha.png" alt="" class="heeheheeha"></div>
+    <div><img src="img/finger.png" alt="" class="finger"></div>
+
+    <!-- <div class="container">
+
+            <div class="noi-dung about">
+                <h2>All About Us</h2>
+                <p class="m">Merry Christmas 2022!</p>
+                <ul class="social-icon">
+                    <li>
+                        <a href="https://www.facebook.com/watch/?v=175310064147000"><i class="fa fa-facebook"><img src="" alt=""></i></a>
+                    </li>
+                    <li><a href="https://www.reddit.com/r/rickroll/comments/zk55mg/_/"><i class="fa fa-reddit"></i></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="noi-dung links">
+                <h2>Link address</h2>
+                <ul>
+                    <li><a href="countdown.html">Home</a></li>
+                    <li><a href="img/RhZhjGhdUFa8jRyi (1).mp4">About Us</a></li>
+                    <li><a href="img/diagnosis bitchless.mp4">Contact</a></li>
+                    <li><a href="https://www.youtube.com/watch?app=desktop&v=ELmWd4O_Jgg">Services</a></li>
+                    <li><a href="signin.html">Account</a></li>
+                </ul>
+            </div>
+
+            <form class="form">
+
+            </form>
+            </li>
+            </ul>
+        </div> -->
+
+        </div>
+    <script>
+        var countDownDate = new Date("Dec 25, 2024 00:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("time").innerHTML = days + "d " + hours + "h " +
+                minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("time").innerHTML = "Merry Christmas!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
