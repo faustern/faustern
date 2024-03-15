@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write your own letter to Santa Claus!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style type="text/css">
+    body {
+        background-image: url("img/krimas.jpg");
+    }
+    
+    .title {
+        color: white;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        text-align: center;
+        font-size: 8vh;
+        margin-top: 0px;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: black;
+        margin-top: 70px;
+    }
+    
+    .extras {
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        text-align: center;
+        font-size: xx-small;
+        margin-top: -60px;
+    }
+    
+    .text {
+        margin-top: 47.7vh;
+        margin-left: 100vh;
+        position: absolute;
+        width: 57vh;
+        height: 94.6vh;
+        font-size: 27px;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        line-height: 1.3;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+    
+    .letter>img {
+        position: absolute;
+        padding-left: 40vh;
+        width: 60%;
+    }
+    
+    .letter .btn {
+        margin-top: 124vh;
+        position: absolute;
+        top: 50%;
+        left: 57%;
+        background-color: rgb(153, 0, 0);
+        color: white;
+        font-size: 16px;
+        padding: 12px 45px;
+        border: 2px solid rgb(73, 11, 11);
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        -webkit-text-stroke-width: 0.3px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black;
+    }
+    
+    .letter .btn:hover {
+        background-color: rgb(0, 153, 51);
+        border: 2px solid rgb(19, 92, 31);
+    }
+    
+    nav {
+        z-index: 10;
+        margin-top: -10px;
+        flex: 1;
+        text-align: center;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 0 100px;
+        box-sizing: border-box;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.12);
+    }
+    
+    nav ul {
+        margin-top: 40px;
+        display: inline-block;
+        list-style: none;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        margin-right: 80px;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black
+    }
+    
+    nav ul li button {
+        font-size: 20px;
+        color: white;
+        outline: none;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+        text-shadow: 1px 1px 0 black
+    }
+    
+    nav ul li button:hover {
+        color: red;
+    }
+    
+    nav ul li a:hover {
+        color: red;
+    }
+    /*Thiết Lập Cho Thành Phần Nội Dung Giới Thiệu*/
+    
+    .container {
+        position: absolute;
+        margin-top: 160vh;
+    }
+    
+    footer .container .noi-dung {
+        margin-right: 30px;
+    }
+    
+    footer .container .noi-dung.about {
+        width: 40%;
+    }
+    
+    footer .container .noi-dung.about h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    footer .container .noi-dung.about h2:before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 220px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    footer .container .noi-dung.about p {
+        color: #999;
+    }
+    /*Thiết Lập Cho Thành Phần Icon Mạng Xã Hội*/
+    
+    .social-icon {
+        margin-top: 20px;
+        display: flex;
+    }
+    
+    .social-icon li {
+        list-style: none;
+    }
+    
+    .social-icon li a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    
+    .social-icon li a:hover {
+        background: #f00;
+    }
+    
+    .social-icon li a .fa {
+        color: #fff;
+        font-size: 20px;
+    }
+    
+    .links h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .links h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .links h2::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 232px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    .links {
+        position: relative;
+        width: 25%;
+    }
+    
+    .links ul li {
+        list-style: none;
+    }
+    
+    .links ul li a {
+        color: #999;
+        text-decoration: none;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    
+    .links ul li a:hover {
+        color: #fff;
+    }
+    
+    .contact h2 {
+        position: relative;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    
+    .contact h2::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #f00;
+    }
+    
+    .contact {
+        width: calc(35% - 60px);
+        margin-right: 0 !important;
+    }
+    
+    .contact .info {
+        position: relative;
+    }
+    
+    .contact .info li {
+        display: flex;
+        margin-bottom: 16px;
+    }
+    
+    .contact .info li span:nth-child(1) {
+        color: #fff;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    
+    .contact .info li span {
+        color: #999;
+    }
+    
+    .contact .info li a {
+        color: #999;
+        text-decoration: none;
+    }
+    
+    .form__field {
+        width: 90%;
+        background: #fff;
+        color: #a3a3a3;
+        font: inherit;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+        border: 0;
+        outline: 0;
+        padding: 8px 4px;
+    }
+    
+    .form__field {
+        width: 90%;
+        background: #fff;
+        color: #a3a3a3;
+        font: inherit;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .1);
+        border: 0;
+        outline: 0;
+        padding: 8px 4px;
+    }
+    
+    @media (max-width: 768px) {
+        footer {
+            padding: 40px;
+        }
+        footer .container {
+            flex-direction: column;
+        }
+        footer .container .noi-dung {
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+        footer .container,
+        .noi-dung.about,
+        .links,
+        .contact {
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div class="NASA">
+        <style>
+            @import url('http://fonts.cdnfonts.com/css/nasa');
+        </style>
+    </div>
+    <div class="full-page">
+        <div class="navbar">
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href='countdown.html'>Home</a></li>
+                    <li><a href='letter.html'>Compose</a></li>
+                    <li><a href='signin.html'>Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <p class="title">WRITE YOUR OWN LETTER TO SANTA CLAUS!</p>
+    <p class="extras">(Write what the hell you want, I don't care)<br>(Santa might, tho)</p>
+    <div class="letter">
+        <img src="img/hoehoehoe.jpg" alt="">
+        <textarea name="" id="input" cols="30" rows="10" class="text"></textarea>
+        <button onclick="save();" class="btn">Submit</button>
+    </div>
+    <!-- <footer>
+        <div class="container">
+
+            <div class="noi-dung about">
+                <h2>All About Us</h2>
+                <p>Merry Christmas 2022!</p>
+                <ul class="social-icon">
+                    <li>
+                        <a href="https://www.facebook.com/watch/?v=175310064147000"><i class="fa fa-facebook"><img src="" alt=""></i></a>
+                    </li>
+                    <li><a href="https://www.reddit.com/r/rickroll/comments/zk55mg/_/"><i class="fa fa-reddit"></i></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="noi-dung links">
+                <h2>Link address</h2>
+                <ul>
+                    <li><a href="countdown.html">Home</a></li>
+                    <li><a href="img/RhZhjGhdUFa8jRyi (1).mp4">About Us</a></li>
+                    <li><a href="img/diagnosis bitchless.mp4">Contact</a></li>
+                    <li><a href="https://www.youtube.com/watch?app=desktop&v=ELmWd4O_Jgg">Services</a></li>
+                    <li><a href="signin.html">Account</a></li>
+                </ul>
+            </div>
+
+            <form class="form">
+
+            </form>
+            </li>
+            </ul>
+        </div>
+
+        </div>
+    </footer> -->
+    <script type="text/javascript">
+        function save() {
+            var new_data = document.getElementById("input").value;
+            if (localStorage.getItem('data') == null) {
+                localStorage.setItem('data', '[]')
+            }
+            var old_data = JSON.parse(localStorage.getItem('data'));
+            old_data.push(new_data);
+            localStorage.setItem('data', JSON.stringify(old_data));
+            alert("Letter submitted, sending to Santa Claus (probably).");
+            console.log("Letter summitted");
+            //it's funny to collect children's personal information heeheheehaa
+        }
+    </script>
+</body>
+
+</html>
