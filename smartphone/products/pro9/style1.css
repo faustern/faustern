@@ -1,0 +1,28 @@
+.header {
+    width: 1500px;
+    height: 60px;
+    background-color: #FFD400;
+    margin: -8px;
+    display: flex;
+    flex-direction: row
+}
+
+.logo {
+    width: 228px;
+    height: 40px;
+    margin-top: 9px;
+    margin-left: 70px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.container>h3 {
+    margin-top: -80vh;
+    margin-left: 120vh;
+}
+
+.container>span {
+    margin-left: 120vh;
+}

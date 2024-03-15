@@ -1,0 +1,92 @@
+.header {
+    width: 1500px;
+    height: 60px;
+    background-color: #FFD400;
+    margin: -8px;
+    display: flex;
+    flex-direction: row
+}
+
+.logo {
+    width: 228px;
+    height: 40px;
+    margin-top: 9px;
+    margin-left: 70px;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    margin: 10vh;
+    margin-left: 24vh;
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    grid-template-rows: 300px;
+}
+
+.product>img {
+    width: 173.59px;
+}
+
+.product>p {
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product>h1 {
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product {
+    border: gainsboro groove thin;
+    padding: 10px 15px 20px
+}
+
+.divitem1 {
+    margin-top: 20px;
+    margin-left: 130vh;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.divitem2 {
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 15px;
+}
+
+.contents>p4 {
+    display: flex;
+    justify-content: space-around;
+    padding: 166.5px;
+    margin-top: -70px;
+    margin-left: -7px;
+}
+
+.contents>p3 {
+    display: flex;
+    justify-content: space-around;
+    padding: 166.5px;
+    margin-top: -50px;
+    margin-left: -7px;
+}
+
+.contents>p2 {
+    display: flex;
+    justify-content: space-around;
+    padding: 166.5px;
+    margin-top: -54px;
+    margin-left: -7px;
+}
+
+.contents>p1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 166.5px;
+    margin-top: -94vh;
+    margin-left: -7px;
+}
