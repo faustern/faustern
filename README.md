@@ -1,2 +1,2 @@
 - 👋 Hi, I’m @faustern
-- 📫 How to reach me: nguyenhienlong16@gmail.com
+- 📫 How to reach me: 
